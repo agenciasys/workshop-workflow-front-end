@@ -1,0 +1,13 @@
+{
+  "name": "workshop-front-workflow",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "thyagorafaell <thyagorafael012@gmail.com>"
+  ],
+  "description": "Workshop para o time de desenvolvimento da Softers sobre workflow do time front-end.",
+  "license": "MIT",
+  "dependencies": {
+    "highlightjs": "~8.4.0"
+  }
+}
