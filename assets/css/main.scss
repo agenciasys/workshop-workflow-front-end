@@ -29,6 +29,8 @@ li {
 
     &:nth-child(odd) {
         a { color: #ffffff; }
+
+        .empty-tag { border: 1px solid #ffffff; }
         
         color: #ffffff;
         background: darken(#00b0eb, 5%);
@@ -36,6 +38,8 @@ li {
 
     &:nth-child(even) {
         a { color: #606060; }
+
+        .empty-tag { border: 1px solid #606060; }
 
         color: #606060;
         background: #ffffff;
@@ -89,9 +93,7 @@ li {
 }
 
 .empty-tag {
-    font-size: 70%;
     font-weight: normal;
-    border: 1px solid #ffffff;
     padding: 2px 4px;
     border-radius: 4px;
 }

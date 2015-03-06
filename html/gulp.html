@@ -1,0 +1,53 @@
+<section class="all-content" id="gulp">
+    <section class="container">
+        <h1>Gulp</h1>
+        <article>
+            <p>
+                <h4>O que é?</h4>
+                Gulp é um <em>task runner</em>.<br>
+            </p>
+            <p>
+                <h4>O que faz?</h4>
+                Não minifica, concatena ou altera nenhum arquivo, o que ele faz é rodar um conjunto de ações (tarefas) em arquivos através de plugins/ módulos javascript na plataforma NodeJS.<br>
+                Estas tarefas são definidas no arquivo <span class="full-tag">gulpfile.js</span>.
+            <p>
+            <p>
+                Primeiramente, deve-se importar os módulos para compilação dos arquivos - definidas no <span class="full-tag">package.json</span>
+<pre><code class="javascript">var gulp: require('gulp'),
+    concat: require('gulp-concat'),
+    sass: require('gulp-sass'),
+    minifyJs: require('gulp-uglify');
+</code></pre>
+            <p>
+                Após isso, é definida uma tarefa, nesse exemplo, a compilação de um arquivos Sass/ Compass.
+            </p>
+<pre><code class="javascript">gulp.task('site-css', function () {
+    return gulp.src('css/style.scss')
+        .pipe(sass())
+        .pipe(concat('style.min.css'))
+        .pipe(gulp.dest('dist'));
+});</code></pre>
+            <p>
+                E enfim executamos:
+            </p>
+            <pre><code class="bash">gulp site-css</code></pre>
+        </article>
+        <article>
+            <h4>Monitorando arquivos</h4>
+            <p>
+                Para não ser necessário executar a tarefa <span class="full-tag">site-css</span> toda vez que alterar o arquivo <span class="full-tag">style.scss</span>, podemos utilizar a feature <span class="full-tag">watch</span>.
+            </p>
+<pre><code class="javascript">gulp.task('site-css', function () {
+    gulp.task('site-watch', function() {
+        gulp.run('site-css');
+
+        gulp.watch('css/style.scss', 'site-css');
+    });
+});</code></pre>
+            <p>
+                Estamos informando ao Gulp que toda vez que o estilo do site for alterado, ele deve ser compilado novamente, executando:
+            </p>
+            <pre><code class="bash">gulp site-watch</code></pre>
+        </article>
+    </section>
+</section>
