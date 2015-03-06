@@ -1,4 +1,4 @@
-# workshop-workflow-front-end
+# Workshop: Workflow Front-end
 Workshop para o time de desenvolvimento da Softers sobre workflow do time front-end.
 Overview das ferramentas NPM, Gulp e Sass + Compass.
 
