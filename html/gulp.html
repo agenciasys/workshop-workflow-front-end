@@ -37,12 +37,10 @@
             <p>
                 Para não ser necessário executar a tarefa <span class="full-tag">site-css</span> toda vez que alterar o arquivo <span class="full-tag">style.scss</span>, podemos utilizar a feature <span class="full-tag">watch</span>.
             </p>
-<pre><code class="javascript">gulp.task('site-css', function () {
-    gulp.task('site-watch', function() {
+<pre><code class="javascript">gulp.task('site-watch', function() {
         gulp.run('site-css');
 
         gulp.watch('css/style.scss', 'site-css');
-    });
 });</code></pre>
             <p>
                 Estamos informando ao Gulp que toda vez que o estilo do site for alterado, ele deve ser compilado novamente, executando:
